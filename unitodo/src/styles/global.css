@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter',sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  :root {
+    font-size: 62.5%; /* 1 rem = 1.0rem  com esta regra de 3 ou seja so dividir por 10 agora*/
+  }
+  
+  body{
+    background: #1A1A1A;
+    color: #F2F2F2;
+    font-size: 1.4rem;
+    height: 100vh;
+    border-radius: 0.8rem;
+  }
+  
+  button{
+    cursor: pointer;
+    background: #029A48;
+  }
+  
