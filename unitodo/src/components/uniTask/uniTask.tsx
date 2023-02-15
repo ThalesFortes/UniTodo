@@ -23,3 +23,8 @@ export function UniTask({task,deleteTask}:TaskProps) {
 	)
 };
 
+
+
+{uniList.map((task,key)=>(
+    <UniTask key={key} task={task} deleteTask={deleteTask} />
+))}

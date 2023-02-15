@@ -1,60 +1,57 @@
-import { UniTask } from './components/uniTask/uniTask';
-import { useState } from 'react';
-import { ITask } from './interface';
-import{AiOutlinePlusCircle} from 'react-icons/ai'
+import {useState} from 'react';
 import { Card } from './components/Card/card';
-import './styles/styles.css'
-
-
-
+import { Header } from './components/Header/header';
+import { UniList } from './components/uniList/unList';
+import { ITodo, Todo } from './interface';
+import './styles/styles.css';
 
 
 export function App() {
 
-  const[task,setTask] =  useState("")
-
-  const[uniList, setUniList] = useState<ITask[]>([])
-
-  function addTask(){
-      const idRandom =(num: number) => Math.floor(Math.random() * num)
-      console.log(idRandom(10))
-
-      const newTask = {id: idRandom(9999999999),nameTask:task}
-
-      setUniList([...uniList,newTask])
+  function addTodo(todo:Todo){
+    setTodos([todo,...todos]);
   }
+  
+  const [todos, setTodos] = useState<ITodo[]>([]);
+  const [editingId, setEditingId] = useState<string| null>(null);
 
-  function deleteTask(DeleteTaskById: number){
-    setUniList(uniList.filter((taskName) => taskName.id !== DeleteTaskById))}
+  const toggleTodo =(selectedTodo: Todo)  => {
+
+    const newTodos = todos.map(todo => {
+      if (todo == selectedTodo){
+        return{
+          ...todo,
+          isDone: !todo.isDone
+        }
+      };
+      return todo;
+    });
+    setTodos(newTodos);
+    setEditingId(null);
+  }
+  
+  const deleteTodo =(DeleteTodoById:string)=>{
+    setTodos(todos.filter((todos) =>todos.id !== DeleteTodoById))
+  };
+  
   
 
+  const handleEditTodo = (id: string) => {
+    setEditingId(id);
+    const todoToEdit = todos.find((todos) => todos.id === id);
+    if (todoToEdit) {
+      setTodos(todoToEdit.s);
+    }
+  };
+
+
+
 	return (
-		<div className="header"> 
-			<header> 
-        <p>UniTodo</p>
-        <div className='div'>
-				<input
-					type="text" 
-          autoComplete="off" 
-					placeholder="Adicione uma nova tarefa" 
-					name="task"
-          value={task}
-          onChange={(event) => setTask(event.target.value)}
-				/>
-
-				<button type="submit" onClick={addTask} >
-          Criar 
-          <AiOutlinePlusCircle size={17}/>
-        </button>
-        </div>
-			</header> 
+    <>
+      <Header addTodo={addTodo}/>
       <Card/>
-
-      <div className='lists'>
-      {uniList.map((task,key)=>(
-			<UniTask key={key} task={task} deleteTask={deleteTask} />
-      ))}
-      </div>
-		</div>)}
+      <UniList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo}/>
+      
+    </>)}
 
 
