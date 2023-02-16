@@ -10,30 +10,54 @@ interface TodoListProps {
   deleteTodo: (DeleteTodoById: string) => void;
 }
 
+export function UniList({
+  todos,
+  toggleTodo,
+  deleteTodo,
+  setTodos,
+}: TodoListProps) {
+  const updateTodo = (event:any, todoID:string) => {
+    const newTodos = todos.map((todo) => {
+      if (todo.id == todoID) {
+        return {
+          ...todo,
+          description: event.target.value,
+        };
+      }
+      return todo;
+    });
+    setTodos(newTodos);
+  };
+  return (
+    <div className={styles.list}>
+      {todos.map((todo, index) => {
+        return (
+          <div className={styles.div} key={index}>
+            <button
+              className={styles.checkContainer}
+              onClick={() => toggleTodo(todo)}
+            >
+              {todo.isDone ? <BsFillCheckCircleFill /> : <div />}
+            </button>
 
-export function UniList({ todos,toggleTodo,deleteTodo}:TodoListProps) {
-        return(
-        <div className={styles.list}>
-        {todos.map((todos) =>{
-    
-       return (
-        <div className={styles.div}>
-          <button  key={todos.id} className={styles.checkContainer} onClick={() => toggleTodo(todos)}>
-            {todos.isDone ? <BsFillCheckCircleFill /> : <div />}
-          </button>
-    
-          <p className={todos.isDone ? styles.textCompleted : ""}>
-            {todos.description}
-          </p>
+           
+              <input
+                className={todo.isDone ? styles.textCompleted : ""}
+                type="text"
+                value={todo.description}
+                onChange={(e) => updateTodo(e, todo.id)}
+              />
+         
 
-          <button className={styles.deleteButton} onClick={() => deleteTodo(todos.id)}>
-            <TbTrash size={20} />
-          </button>
-        </div>
-         )
-        })}
-        </div>
-       
-      )
-    }
-
+            <button
+              className={styles.deleteButton}
+              onClick={() => deleteTodo(todo.id)}
+            >
+              <TbTrash size={20} />
+            </button>
+          </div>
+        );
+      })}
+    </div>
+  );
+}

@@ -10,6 +10,15 @@
     gap: 12px;
   }
   
+  .div input{
+    background: #262626;
+    width: 100%;
+    font-size: 14px;
+    line-height: 19px;
+    color: #F2F2F2;
+    margin-right: auto;
+  }
+
 
 .textCompleted {
     color: #808080;
@@ -31,7 +40,6 @@
 }
   
 
-  
 .deleteButton {
   background: none;
   border: none;
