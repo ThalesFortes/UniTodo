@@ -10,14 +10,8 @@
     gap: 12px;
   }
   
-.div p {
-    font-size: 14px;
-    line-height: 19px;
-    color: #F2F2F2;
-    margin-right: auto;
-  }
-  
-p.textCompleted {
+
+.textCompleted {
     color: #808080;
     text-decoration: line-through;
   }
@@ -30,26 +24,26 @@ p.textCompleted {
   }
   
 .checkContainer div {
-    width: 100%;
-    height: 100%;
-    border-radius: 999px;
-    border: 2px solid #4EA8DE;
-  }
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  border: 2px solid #16B660;
+}
   
-.checkContainer svg {
-    width: 100%;
-    height: 100%;
-    color: #5E60CE;
-  }
+
   
 .deleteButton {
-    background: none;
-    border: none;
-    color: #808080;
-  }
+  background: none;
+  border: none;
+  color: #E25858;
+}
+  
 
 .list {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    width: 100%;
+    max-width: 55%;
+    margin: auto;
   }
