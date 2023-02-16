@@ -2,21 +2,26 @@
     width: 100%;
     background: #262626;
     border: 1px solid #333333;
-    padding: 16px;
+    padding: 2rem;
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 12px;
+    gap: 1.2rem;
   }
   
   .div input{
     background: #262626;
     width: 100%;
-    font-size: 14px;
-    line-height: 19px;
+    font-size: 1.4rem;
+    line-height: 1.9rem;
     color: #F2F2F2;
     margin-right: auto;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    outline: none;
   }
 
 
@@ -50,8 +55,16 @@
 .list {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 1.2rem;
     width: 100%;
     max-width: 55%;
     margin: auto;
   }
+
+  @media only screen and (max-width: 768px) {
+    .list {
+      max-width: 80%;
+    }
+  }
+  
+ 

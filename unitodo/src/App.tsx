@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect,useState } from "react";
 import { Card } from "./components/Card/card";
 import { Header } from "./components/Header/header";
 import { UniList } from "./components/uniList/uniList";
 import { ITodo, Todo } from "./interface";
+
 
 export function App() {
   const [todos, setTodos] = useState<ITodo[]>([]);
@@ -28,8 +29,9 @@ export function App() {
     setTodos(todos.filter((todos) => todos.id !== DeleteTodoById));
   };
 
+
   return (
-    <>
+    <> 
       <Header addTodo={addTodo} />
       <Card todos={todos} />
       <UniList

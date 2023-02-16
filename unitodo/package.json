@@ -9,10 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "componentes": "^0.0.10",
     "create-vite": "^4.1.0",
+    "node-sass": "^8.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
+    "styled": "^1.0.0",
+    "styled-components": "^5.3.6",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
