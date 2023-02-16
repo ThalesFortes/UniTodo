@@ -1,6 +1,7 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import{AiOutlinePlusCircle} from 'react-icons/ai';
 import { Todo } from "../../interface";
+import styles from './header.module.css';
 
 interface TodoInputProps{ 
     addTodo:any
@@ -25,13 +26,11 @@ export function Header ({addTodo}:TodoInputProps){
         setTodo(todoObj);
     }
      
-
-
     return(
-    <div className="header"> 
+    <div className={styles.header}> 
         <header> 
             <h1>UniTodo</h1>
-            <form onSubmit={submitTodo}>
+            <form onSubmit={submitTodo} className={styles.form}>
                 <input
                     type="text" 
                     name="todo"

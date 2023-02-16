@@ -7,8 +7,6 @@ export interface ITodo{
   isDone:boolean;
 }
 
-
-
 export class Todo implements ITodo{
   id: string;
   description:string;
