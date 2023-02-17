@@ -2,22 +2,13 @@ import {useState} from "react";
 import{AiOutlinePlusCircle} from 'react-icons/ai';
 import { Todo } from "../../interface";
 import styles from './header.module.css';
-import list from '../../assets/list.png'
-import bg from '../../assets/bg.png'
 
 
 interface TodoInputProps{ 
     addTodo:any
 }
 
-
-
 export function Header ({addTodo}:TodoInputProps){
-
-    const [image, setImage] = useState(list);
-    const [showDefaultImage, setShowDefaultImage] = useState(true);
-
-
 
     const todoObj : Todo = new Todo();
 
@@ -26,7 +17,7 @@ export function Header ({addTodo}:TodoInputProps){
     function handleTodoChange(event: React.ChangeEvent<HTMLInputElement>)
      {
         setTodo({...todo,description: event.target.value})
-        setShowDefaultImage(false);
+ 
         
     }
 
@@ -35,8 +26,7 @@ export function Header ({addTodo}:TodoInputProps){
         console.log('todo',todo)
         addTodo(todo);
         setTodo(todoObj);
-        setImage(bg) ;
-        setShowDefaultImage(false);
+     
     }
      
     return(
@@ -56,16 +46,7 @@ export function Header ({addTodo}:TodoInputProps){
                 </button>
             </form>
         </header>
-        <div className={styles.list}>
-        {showDefaultImage ? (
-            <div>
-            <img src={image} />
-            <p>Select an image to upload</p>
-          </div>
-           ) : (
-            <img src={image}  />
-          )}
-        </div> 
+       
     </div>
   
     )

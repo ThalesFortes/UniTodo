@@ -2,6 +2,7 @@ import { TbTrash } from "react-icons/tb";
 import { Todo } from "../../interface";
 import styles from "./uniList.module.css";
 import { BsFillCheckCircleFill } from "react-icons/bs";
+import { EmptyList } from "../EmptyList/empty";
 
 interface TodoListProps {
   todos: Todo[];
@@ -29,6 +30,8 @@ export function UniList({
     setTodos(newTodos);
   };
   return (
+    <>
+      {todos.length > 0 ? (
     <div className={styles.list}>
       {todos.map((todo, index) => {
         return (
@@ -59,5 +62,9 @@ export function UniList({
         );
       })}
     </div>
+      ) : (
+        <p><EmptyList/></p>
+      )}
+    </>
   );
 }

@@ -1,6 +1,5 @@
 import { v4 as uuid} from 'uuid'; 
 
-
 export interface ITodo{
   id:string;
   description:string;
@@ -18,5 +17,4 @@ export class Todo implements ITodo{
     this.isDone = isDone
   }
 }
-
 
