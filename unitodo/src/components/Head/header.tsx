@@ -2,7 +2,6 @@ import {useState} from "react";
 import{AiOutlinePlusCircle} from 'react-icons/ai';
 import { Todo } from "../../interface";
 import darkStyles from './darkHeader.module.css';
-import whiteStyles from './whiteHeader.module.css';
 import { BsSun } from "react-icons/bs";
 import { TbMoonStars } from "react-icons/tb";
 import {  TemaContext,TemaProvider } from '../Theme/context'
