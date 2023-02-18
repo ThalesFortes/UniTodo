@@ -1,0 +1,127 @@
+.div {
+  width: 100%;
+  background: var(--background-unilist);
+  border: 1px solid #333333;
+  padding: 2rem;
+  border-radius: 8px;
+  border-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.6s ease;
+  gap: 1.2rem;
+}
+
+.div input{
+  background: var(--background-unilist);
+  width: 100%;
+  font-size: 1.4rem;
+  line-height: 1.9rem;
+  color: var(--card-color);
+  border: none;
+  outline: none;
+  transition: all 0.6s ease;
+}
+
+
+.textCompleted {
+  color: #808080;
+  text-decoration: line-through;
+  background: var(--textComplete-background);
+}
+
+.divcompl{
+  width: 100%;
+  background: var(--background-unilist);
+  border: 1px solid #333333;
+  padding: 2rem;
+  border-radius: 8px;
+  border-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.6s ease;
+  gap: 1.2rem;
+  color: #808080;
+  text-decoration: line-through;
+  background-color: var(--textComplete-background);
+}
+
+.divcompl input{
+  background: var(--textIncomplete-background);
+  width: 100%;
+  font-size: 1.4rem;
+  line-height: 1.9rem;
+  color: var(--card-color);
+  border: none;
+  outline: none;
+  transition: all 0.6s ease;
+}
+
+
+
+.checkContainer {
+  width: 18px;
+  height: 18px;
+  background: none;
+  border: none;
+  
+}
+
+.checkContainer div {
+width: 100%;
+height: 100%;
+border-radius: 999px;
+border: 2px solid #009467;
+transition: all 0.6s ease;
+}
+
+.checkIcon {
+background: #F2F2F2;
+color: #009467;
+font-size: 18px;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: all 0.6s ease;
+}
+
+.checkContainer div:hover {
+border: 2px  solid #009467;
+}
+
+.checkIcon:hover {
+color: #008B5A;
+}
+
+
+.deleteButton {
+background: none;
+border: none;
+color: #808080;
+display: flex;
+align-items: center;
+transition: all 0.6s ease;
+}
+
+.deleteButton:hover {
+background: #333333;
+padding: 0.2rem;
+color: #E25858;
+}
+
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+  max-width: 55%;
+  margin: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .list {
+    max-width: 80%;
+  }
+}

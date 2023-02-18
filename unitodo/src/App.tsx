@@ -1,12 +1,20 @@
-import { useEffect,useState } from "react";
+import { useState} from "react";
 import { Card } from "./components/Card/card";
-import { Header } from "./components/Header/header";
-import { UniList } from "./components/uniList/uniList";
+import { Header } from "./components/Head/header";
+import { UniList } from "./components/uniLists/uniList";
 import { ITodo, Todo } from "./interface";
+import {  TemaContext,TemaProvider } from './components/Theme/context'
+import {useContext} from 'react'
+
+
 
 
 export function App() {
+ 
+  const {isDarkMode} =  useContext(TemaContext)
+  
   const [todos, setTodos] = useState<ITodo[]>([]);
+
 
   function addTodo(todo: Todo) {
     setTodos([todo, ...todos]);
@@ -31,7 +39,8 @@ export function App() {
 
 
   return (
-    <> 
+    <TemaProvider>
+    <div data-theme={isDarkMode ? "dark" : "light"}>
       <Header addTodo={addTodo} />
       <Card todos={todos} />
       <UniList
@@ -40,6 +49,9 @@ export function App() {
         toggleTodo={toggleTodo}
         deleteTodo={deleteTodo}
       />
-    </>
+      </div>
+    </TemaProvider>
   );
 }
+
+

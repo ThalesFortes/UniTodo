@@ -32,12 +32,14 @@
   }
   
   .head span {
-    background: #333333;
-    color: #D9D9D9;
+    background: var(--background-card);
+    color: var(--color-span);
     padding: 0.2rem 0.8rem;
     border-radius: 999px;
     font-size: 1.2rem;
     font-weight: 700;
+    transition: all 0.6s ease;
+
   }
   
   @media (max-width: 768px) {

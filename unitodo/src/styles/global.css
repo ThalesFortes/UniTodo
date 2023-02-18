@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -8,19 +9,53 @@
   }
   
   :root {
-    font-size: 62.5%; /* 1 rem = 1.0rem  com esta regra de 3 ou seja so dividir por 10 agora*/
+      font-size: 62.5%; /* 1 rem = 1.0rem  com esta regra de 3 ou seja so dividir por 10 agora*/
+    --background-head:#D9D9D9;
+    --background-body:#C1C1C1;
+    --background-input:#F2F2F2;
+    --background-unilist:#FFFFFF;
+    --card-color:Gray;
+    --background-card:#D9D9D9;
+    --color-span:#333333;
+    --input-color:#333333;
+    --icons-color:#252525;
+    --textComplete-background:#EDEDED;
+    --textIncomplete-background:#EDEDED;
+
   }
+
+  *:has(#darkmode){
+    --background-head:#0D0D0D;
+    --background-body:#1A1A1A;
+    --background-input:#262626;
+    --background-unilist:#262626;
+    --card-color:#F2F2F2;
+    --background-card:#333333;
+    --color-span:#D9D9D9;
+    --input-color:#F2F2F2;
+    --icons-color:#FFFFFF;
+    --textComplete-background:#333333;
+    --textIncomplete-background:#333333;
+  }
+
   
   body{
-    background: #1A1A1A;
+    background: var(--background-body);
     color: #F2F2F2;
     font-size: 1.4rem;
     height: 100vh;
     border-radius: 0.8rem;
+    overflow: scroll;
+  }
+
+  body::-webkit-scrollbar{
+    display: none;
   }
   
   button{
     cursor: pointer;
-    background: #029A48;
   }
-  
+
+ 
+
+ 
