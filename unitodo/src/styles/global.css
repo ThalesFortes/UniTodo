@@ -21,6 +21,8 @@
     --icons-color:#252525;
     --textComplete-background:#EDEDED;
     --textIncomplete-background:#EDEDED;
+    --background-delete:#EDEDED;
+
 
   }
 
@@ -36,17 +38,29 @@
     --icons-color:#FFFFFF;
     --textComplete-background:#333333;
     --textIncomplete-background:#333333;
+    --background-delete:#333333;
+    
   }
 
   
-  body{
+  body {
     background: var(--background-body);
     color: #F2F2F2;
     font-size: 1.4rem;
     height: 100vh;
     border-radius: 0.8rem;
     overflow: scroll;
+    transition: background 0.5s ease-in-out;
   }
+  
+  body.fade-out {
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
+  body.fade-in {
+    background: var(--background-body);
+  }
+  
 
   body::-webkit-scrollbar{
     display: none;

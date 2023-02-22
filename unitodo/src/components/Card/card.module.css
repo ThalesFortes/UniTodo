@@ -13,6 +13,7 @@
     margin-bottom: 2.5rem;
     padding-bottom: 4rem;
     border-bottom: 1px solid #333;
+    
   }
   
   .head > div {
@@ -25,6 +26,7 @@
     color: #16B660;
     font-size: 1.4rem;
     font-weight: 700;
+    
   }
   
   #completed {
